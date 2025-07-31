@@ -53,6 +53,6 @@ class Embedding:
                 if triplet not in seen:
                     seen.add(triplet)
                     triplets.append(triplet)
-        return triplets
+        return triplets[:40]
 
 

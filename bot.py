@@ -28,7 +28,9 @@ def extract_clean_text_from_pdf(pdf_path):
             text += page_text + '\n'
     text = re.sub(r'\s+', ' ', text)
     text = re.sub(r'[^\x20-\x7Eа-яА-ЯёЁ]', '', text)
+    text = text.replace('"', '').replace("'", '')
     text = text.strip()
+    text = text.lower()
     return text
 
 @bot.message_handler(content_types=['document'])
